@@ -1,0 +1,11 @@
+﻿<Application  
+    x:Class="UwpTwoViews.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UwpTwoViews"
+    xmlns:vm="using:UwpTwoViews.ViewModels"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <vm:ViewModelLocator xmlns:vm="using:UwpTwoViews.ViewModels" x:Key="Locator" />
+    </Application.Resources>
+</Application>
