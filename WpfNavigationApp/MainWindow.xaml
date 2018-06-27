@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfNavigationApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfNavigationApp"
+        mc:Ignorable="d"
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
+        Title="{Binding MainTitle}" Height="450" Width="800">
+    <StackPanel >
+
+        <StackPanel Orientation="Horizontal" >
+
+            <Button Name="btnPage1" Height ="30"  Width ="100" Command="{Binding GotoLoginCommand}" Content="Login"></Button>
+            <Button Name="btnPage2" Height ="30"  Width ="100" Command="{Binding GotoNotesCommand}" Content="Notes"></Button>
+
+        </StackPanel>
+        <Frame Name="MainFrame" Height="420"></Frame>
+
+    </StackPanel>
+</Window>
