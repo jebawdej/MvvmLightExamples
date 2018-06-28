@@ -17,6 +17,7 @@ using GalaSoft.MvvmLight.Ioc;
 using CommonServiceLocator;
 using System;
 using GalaSoft.MvvmLight.Views;
+using WpfNavigationApp.Common;
 
 namespace WpfNavigationApp.ViewModel
 {

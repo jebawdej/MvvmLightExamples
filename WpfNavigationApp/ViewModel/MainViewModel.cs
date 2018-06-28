@@ -1,5 +1,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using NaviWPFApp.ViewModels.Common;
+using WpfNavigationApp.Common;
 
 namespace WpfNavigationApp.ViewModel
 {
@@ -17,8 +19,6 @@ namespace WpfNavigationApp.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        public RelayCommand GotoLoginCommand { get; private set; }
-        public RelayCommand GotoNotesCommand { get; private set; }
         private IFrameNavigationService _navigationService;
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -27,16 +27,19 @@ namespace WpfNavigationApp.ViewModel
         {
             MainTitle = "Hallo Allemaal";
             _navigationService = fns;
-            this.GotoLoginCommand = new RelayCommand(this.GotoLogin);
-            this.GotoNotesCommand = new RelayCommand(this.GotoNotes);
+ 
 
            // _navigationService.NavigateTo("LoginView");
         }
 
-        private void GotoLogin() { _navigationService.NavigateTo("LoginView"); }
-
-        private void GotoNotes() { _navigationService.NavigateTo("Notes"); }
-
+        public MyCommand GotoLoginCommand
+        {
+            get { return new MyCommand(x => _navigationService.NavigateTo("LoginView")); }
+        }
+        public MyCommand GotoNotesCommand
+        {
+            get { return new MyCommand(x => _navigationService.NavigateTo("Notes")); }
+        }
         private string _mainTitle;
         public string MainTitle
         {

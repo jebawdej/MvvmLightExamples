@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfNavigationApp
+namespace WpfNavigationApp.Common
 {
     public interface IFrameNavigationService : INavigationService
     {
