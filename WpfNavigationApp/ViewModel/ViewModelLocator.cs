@@ -16,6 +16,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using CommonServiceLocator;
 using System;
+using GalaSoft.MvvmLight.Views;
 
 namespace WpfNavigationApp.ViewModel
 {
@@ -41,9 +42,11 @@ namespace WpfNavigationApp.ViewModel
         private static void SetupNavigation()
         {
             var navigationService = new FrameNavigationService();
+
             navigationService.Configure("LoginView", new Uri("../Views/LoginView.xaml", UriKind.Relative));
             navigationService.Configure("Notes", new Uri("../Views/NotesView.xaml", UriKind.Relative));
 
+            SimpleIoc.Default.Unregister<IFrameNavigationService>();
             SimpleIoc.Default.Register<IFrameNavigationService>(() => navigationService);
         }
         public MainViewModel Main
