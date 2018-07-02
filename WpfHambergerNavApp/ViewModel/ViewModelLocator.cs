@@ -1,7 +1,7 @@
 /*
   In App.xaml:
   <Application.Resources>
-      <vm:ViewModelLocator xmlns:vm="clr-namespace:WpfNavigationApp"
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:WpfHambergerNavApp"
                            x:Key="Locator" />
   </Application.Resources>
   
@@ -12,15 +12,18 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using CommonServiceLocator;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
-using CommonServiceLocator;
 using System;
-using GalaSoft.MvvmLight.Views;
-using WpfNavigationApp.Common;
+using WpfHambergerNavApp.Common;
 
-namespace WpfNavigationApp.ViewModel
+namespace WpfHambergerNavApp.ViewModel
 {
+    /// <summary>
+    /// This class contains static references to all the view models in the
+    /// application and provides an entry point for the bindings.
+    /// </summary>
     /// <summary>
     /// This class contains static references to all the view models in the
     /// application and provides an entry point for the bindings.

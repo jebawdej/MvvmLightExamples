@@ -13,16 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfNavigationApp
+namespace WpfNavigationApp.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for NotesView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NotesView : Page
     {
-        public MainWindow()
+        public NotesView()
         {
             InitializeComponent();
-        } 
+        }
     }
 }

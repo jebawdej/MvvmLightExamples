@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfNavigationApp
+namespace WpfHambergerNavApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +23,6 @@ namespace WpfNavigationApp
         public MainWindow()
         {
             InitializeComponent();
-        } 
+        }
     }
 }
