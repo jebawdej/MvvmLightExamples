@@ -17,7 +17,6 @@
             <HamburgerMenu:HamburgerMenuItem Icon="Assets/home.png" Text="Home" SelectionCommand="{Binding ElementName=this_}"/>
             <HamburgerMenu:HamburgerMenuItem Icon="Assets/login.png" Text="Login" SelectionCommand="{Binding GotoLoginCommand}"/>
             <HamburgerMenu:HamburgerMenuItem Icon="Assets/note.png" Text="Notes" SelectionCommand="{Binding GotoNotesCommand}"/>
-            
         </HamburgerMenu:HamburgerMenu>
         <Frame Name="MainFrame" Height="420" Grid.Column="2" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
