@@ -6,7 +6,7 @@
         Title="{Binding CurrentViewModel.Title}"
         d:DesignHeight="300"
         d:DesignWidth="300"
-        DataContext="{Binding Source={StaticResource Locator}}"
+        DataContext="{Binding Main,Source={StaticResource Locator}}"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
     <Grid>
