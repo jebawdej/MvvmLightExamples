@@ -31,6 +31,10 @@ namespace WpfHamburgerNavApp.ViewModel
             // _navigationService.NavigateTo("LoginView");
         }
 
+        public MyCommand GotoHomeCommand
+        {
+            get { return new MyCommand(x => _navigationService.Clear()); }
+        }
         public MyCommand GotoLoginCommand
         {
             get { return new MyCommand(x => _navigationService.NavigateTo("LoginView")); }

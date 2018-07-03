@@ -10,5 +10,6 @@ namespace WpfHamburgerNavApp.Common
     public interface IFrameNavigationService : INavigationService
     {
         object Parameter { get; }
+        void Clear();
     }
 }

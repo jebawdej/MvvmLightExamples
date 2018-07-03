@@ -11,7 +11,7 @@
 
     <Grid>
         <Grid Background="Gray">
-            <Label Content="{Binding HelloWorld}" Foreground="White" Background="Black" Width="150" Height="150"></Label>
+            <TextBox Foreground="Black" Text="{Binding NoteText}" Background="White" TextWrapping="Wrap" Width="550" Height="350"></TextBox>
         </Grid>
     </Grid>
 </Page>

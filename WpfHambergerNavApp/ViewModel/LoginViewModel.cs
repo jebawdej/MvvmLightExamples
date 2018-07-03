@@ -25,6 +25,46 @@ namespace WpfHamburgerNavApp.ViewModel
             }
         }
 
+        private bool _isNotAuthenticated;
+        public bool IsNotAuthenticated
+        {
+            get
+            {
+                return _isNotAuthenticated;
+            }
+            set
+            {
+                _isNotAuthenticated = value;
+                RaisePropertyChanged(() => IsNotAuthenticated);
+            }
+        }
+        private string _userName;
+        public string UserName
+        {
+            get
+            {
+                return _userName;
+            }
+            set
+            {
+                _userName = value;
+                RaisePropertyChanged(() => UserName);
+            }
+        }
+
+        private string _password;
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                _password = value;
+                RaisePropertyChanged(() => Password);
+            }
+        }
         public LoginViewModel(IFrameNavigationService fns)
         {
             HelloWorld = "Login View";

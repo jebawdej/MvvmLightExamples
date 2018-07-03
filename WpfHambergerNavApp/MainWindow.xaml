@@ -14,7 +14,7 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <HamburgerMenu:HamburgerMenu Background="Blue" MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left">
-            <HamburgerMenu:HamburgerMenuItem Icon="Assets/home.png" Text="Home" SelectionCommand="{Binding ElementName=this_}"/>
+            <HamburgerMenu:HamburgerMenuItem Icon="Assets/home.png" Text="Home" SelectionCommand="{Binding GotoHomeCommand}"/>
             <HamburgerMenu:HamburgerMenuItem Icon="Assets/login.png" Text="Login" SelectionCommand="{Binding GotoLoginCommand}"/>
             <HamburgerMenu:HamburgerMenuItem Icon="Assets/note.png" Text="Notes" SelectionCommand="{Binding GotoNotesCommand}"/>
         </HamburgerMenu:HamburgerMenu>

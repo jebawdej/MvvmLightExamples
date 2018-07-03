@@ -59,7 +59,18 @@ namespace WpfHamburgerNavApp.Common
         {
             NavigateTo(pageKey, null);
         }
+        public void Clear()
+        {
+            var frame = GetDescendantFromName(System.Windows.Application.Current.MainWindow, "MainFrame") as Frame;
 
+            if (frame != null)
+            {
+                frame.Content = null;
+            }
+
+            _historic.Clear();
+            CurrentPageKey = "";
+        }
         public virtual void NavigateTo(string pageKey, object parameter)
         {
             lock (_pagesByKey)
