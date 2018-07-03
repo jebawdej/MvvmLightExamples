@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfHambergerNavApp.Common;
+using WpfHamburgerNavApp.Common;
 
-namespace WpfHambergerNavApp.ViewModel
+namespace WpfHamburgerNavApp.ViewModel
 {
 
     public class NoteViewModel : ViewModelBase

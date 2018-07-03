@@ -11,7 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace WpfHambergerNavApp.Common
+namespace WpfHamburgerNavApp.Common
 {
     class FrameNavigationService : ViewModelBase, IFrameNavigationService
     {

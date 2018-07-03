@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfHambergerNavApp.Properties
+namespace WpfHamburgerNavApp.Properties
 {
 
 

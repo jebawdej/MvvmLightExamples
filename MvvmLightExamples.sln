@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UwpSplitViewMultiPage", "Uw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfNavigationApp", "WpfNavigationApp\WpfNavigationApp.csproj", "{81D73106-85F2-4D9D-921A-99B97D1733F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHambergerNavApp", "WpfHambergerNavApp\WpfHambergerNavApp.csproj", "{D1CEC76C-5CEA-423E-A7E9-D936E7F3D2CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHamburgerNavApp", "WpfHambergerNavApp\WpfHamburgerNavApp.csproj", "{D1CEC76C-5CEA-423E-A7E9-D936E7F3D2CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

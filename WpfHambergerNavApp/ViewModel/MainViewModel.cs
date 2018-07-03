@@ -1,8 +1,8 @@
 using GalaSoft.MvvmLight;
-using WpfHambergerNavApp.Common;
-using WpfHambergerNavApp.ViewModels.Common;
+using WpfHamburgerNavApp.Common;
+using WpfHamburgerNavApp.ViewModels.Common;
 
-namespace WpfHambergerNavApp.ViewModel
+namespace WpfHamburgerNavApp.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.

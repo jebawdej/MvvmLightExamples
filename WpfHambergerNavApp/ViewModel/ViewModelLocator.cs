@@ -1,7 +1,7 @@
 /*
   In App.xaml:
   <Application.Resources>
-      <vm:ViewModelLocator xmlns:vm="clr-namespace:WpfHambergerNavApp"
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:WpfHamburgerNavApp"
                            x:Key="Locator" />
   </Application.Resources>
   
@@ -16,9 +16,9 @@ using CommonServiceLocator;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using System;
-using WpfHambergerNavApp.Common;
+using WpfHamburgerNavApp.Common;
 
-namespace WpfHambergerNavApp.ViewModel
+namespace WpfHamburgerNavApp.ViewModel
 {
     /// <summary>
     /// This class contains static references to all the view models in the

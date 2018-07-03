@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace WpfHambergerNavApp.ViewModels.Common
+namespace WpfHamburgerNavApp.ViewModels.Common
 {
     public class MyCommand : ICommand
     {
