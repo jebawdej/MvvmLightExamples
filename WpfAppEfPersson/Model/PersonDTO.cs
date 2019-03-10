@@ -77,20 +77,6 @@ namespace WpfAppEfPersson
             }
         }
 
-        private string _country;
-        public string Country
-        {
-            get
-            {
-                return _country;
-            }
-            set
-            {
-                Set<string>(() => this.Country, ref _country, value);
-                RaisePersonChanged();
-            }
-        }
-
         private string _postalCode;
         public string PostalCode
         {
@@ -105,6 +91,32 @@ namespace WpfAppEfPersson
             }
         }
 
+        private string _place;
+        public string Place
+        {
+            get
+            {
+                return _place;
+            }
+            set
+            {
+                Set<string>(() => this.Place, ref _place, value);
+                RaisePersonChanged();
+            }
+        }
+        private string _country;
+        public string Country
+        {
+            get
+            {
+                return _country;
+            }
+            set
+            {
+                Set<string>(() => this.Country, ref _country, value);
+                RaisePersonChanged();
+            }
+        }
         private void RaisePersonChanged()
         {
             PersonChanged?.Invoke(this, EventArgs.Empty);

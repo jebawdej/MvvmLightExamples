@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:WpfAppEfPersson"
         mc:Ignorable="d"
         DataContext="{Binding Main, Source={StaticResource Locator}}"
-        Title="{Binding Title}" Height="400" Width="650" Loaded="Window_Loaded">
+        Title="{Binding Title}" Height="450" Width="650" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="PersonsDataGrid" Margin="20,0,0,0.4" ItemsSource="{Binding Persons}" SelectedItem="{Binding Path=SelectedPerson, Mode=TwoWay}" AutoGenerateColumns="False" Width="240" HorizontalAlignment="Left">
+        <DataGrid x:Name="PersonsDataGrid" Margin="20,0,0,0.4" ItemsSource="{Binding Persons}" SelectedItem="{Binding Path=SelectedPerson, Mode=TwoWay}" AutoGenerateColumns="False" Width="260" HorizontalAlignment="Left">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding FirstName}" Header="Voornaam"/>
                 <DataGridTextColumn Binding="{Binding LastName}" Header="Achternaam"/>
-                <DataGridTextColumn Binding="{Binding Country}" Header="Woonplaats"/>
+                <DataGridTextColumn Binding="{Binding Place}" Header="Woonplaats"/>
             </DataGrid.Columns>
         </DataGrid>
         <Grid x:Name="grid1"  HorizontalAlignment="Left" Margin="350,60,0,0" VerticalAlignment="Top">
@@ -41,11 +41,14 @@
             <TextBox x:Name="houseNumberTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding SelectedPerson.HouseNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
             <Label Content="Postal Code:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
             <TextBox x:Name="postalCodeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding SelectedPerson.PostalCode, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Country:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
-            <TextBox x:Name="countryTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="5" Text="{Binding SelectedPerson.Country, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Button x:Name ="btnSave" Content="Save" Command="{Binding SavePersonCommand}" Grid.Column="1" Grid.Row="6" />
-            <Button x:Name ="btnNew" Content="New" Command="{Binding CreateNewPersonCommand}" Grid.Column="0" Grid.Row="6" />
-            <Button x:Name ="btnDelete" Content="Delete" Command="{Binding DeletePersonCommand}" Grid.Column="0" Grid.Row="7" />
+            <Label Content="Place:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
+            <TextBox x:Name="placeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="5" Text="{Binding SelectedPerson.Place, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Country:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="6" VerticalAlignment="Center"/>
+            <TextBox x:Name="countryTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="6" Text="{Binding SelectedPerson.Country, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+
+            <Button x:Name ="btnSave" Content="Save" Command="{Binding SavePersonCommand}" Margin="0 20 5 0" Grid.Column="1" Grid.Row="7" />
+            <Button x:Name ="btnNew" Content="New" Command="{Binding CreateNewPersonCommand}" Margin="0 20 0 0" Grid.Column="0" Grid.Row="7" />
+            <Button x:Name ="btnDelete" Content="Delete" Command="{Binding DeletePersonCommand}" Margin="0 5 0 0" Grid.Column="0" Grid.Row="8" />
 
         </Grid>
 

@@ -78,6 +78,7 @@ namespace WpfAppEfPersson.Service
             to.Street = from.Street;
             to.HouseNumber = from.HouseNumber;
             to.PostalCode = from.PostalCode;
+            to.Place = from.Place;
             to.Country = from.Country;
         }
     }

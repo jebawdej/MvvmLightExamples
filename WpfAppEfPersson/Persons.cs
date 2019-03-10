@@ -19,7 +19,8 @@ namespace WpfAppEfPersson
         public string LastName { get; set; }
         public string Street { get; set; }
         public string HouseNumber { get; set; }
-        public string Country { get; set; }
+        public string Place { get; set; }
         public string PostalCode { get; set; }
+        public string Country { get; set; }
     }
 }
