@@ -8,6 +8,20 @@ using System.Threading.Tasks;
 
 namespace WpfAppEfPersson
 {
+    //- To Initialise and configure for the entity class Pedrsons and the DTO class PersonDTO
+    //Mapper.Initialize(cfg => cfg.CreateMap<Persons, PersonDTO>());
+
+    //To map the persons class to personDTO class call:
+    //Persons p = new Persons; 
+    //Fill the proprerties of object p.
+    // PersonDTO pDto = Mapper.Map<PersonDTO>(p);
+
+    //To map the personDTO class to persons class call:
+    //PersonDTO pDto = new PersonDTO; 
+    //Fill the proprerties of object pDto.
+    // Persons p = Mapper.Map<Persons>(pDto);
+
+
     public class PersonsMapper
     {
         public PersonsMapper()
