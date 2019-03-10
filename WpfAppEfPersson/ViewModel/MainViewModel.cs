@@ -2,6 +2,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.ObjectModel;
+using System.Windows;
 using WpfAppEfPersson.Service;
 
 namespace WpfAppEfPersson.ViewModel
@@ -21,7 +22,9 @@ namespace WpfAppEfPersson.ViewModel
     public class MainViewModel : ViewModelBase
     {
         private readonly IDataService _dataService;
-        public RelayCommand SavePersonsCommand { get; private set; }
+        public RelayCommand SavePersonCommand { get; private set; }
+        public RelayCommand CreateNewPersonCommand { get; private set; }
+        public RelayCommand DeletePersonCommand { get; private set; }
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -35,19 +38,43 @@ namespace WpfAppEfPersson.ViewModel
             else
             {
                 // Code runs "for real"
+                //Set title text to: "WpfAppEfPerson"
                 Title = "WpfAppEfPerson";
-                SavePersonsCommand = new RelayCommand(SavePersonsMethod, CheckPersonChanged);
-                Persons = _dataService.GetAll();
-                if (Persons.Count > 0)
-                    SelectedPerson = Persons[0];
+                //Create RelayCommand to save the record after create or update
+                SavePersonCommand = new RelayCommand(SavePersonsMethod, CheckPersonChanged);
+                CreateNewPersonCommand = new RelayCommand(CreateNewPersonsMethod);
+                DeletePersonCommand = new RelayCommand(DeletePersonMethode);
+                //Get all records into the Persons collection
+                UpdateData();
             }
         }
+
+        private void DeletePersonMethode()
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure to delete this record?",
+                                          "Confirmation",
+                                          MessageBoxButton.YesNo,
+                                          MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                _dataService.DeletePerson(SelectedPerson.ID);
+                UpdateData();
+            }
+        }
+
+        private void CreateNewPersonsMethod()
+        {
+            SelectedPerson = new PersonDTO();
+        }
+
         /// <summary>
         /// Command handler of RelayCommand: SavePersonsCommand
         /// </summary>
         private void SavePersonsMethod()
         {
-            throw new NotImplementedException();
+            _dataService.SavePerson(SelectedPerson);
+            UpdateData();
+
         }
         /// <summary>
         /// Title in caption above the form
@@ -92,11 +119,18 @@ namespace WpfAppEfPersson.ViewModel
 
                 _selectedperson = value;
                 personReadyToSave(false);
-
-                _selectedperson.PersonChanged += OnPersonChanged;
+                if (_selectedperson != null)
+                    _selectedperson.PersonChanged += OnPersonChanged;
                 RaisePropertyChanged("SelectedPerson");
                 
             }
+        }
+        private void UpdateData()
+        {
+            Persons = _dataService.GetAll();
+            //If collection is not  empty, set SelectedPerson to the first record of the collection.
+            if (Persons.Count > 0)
+                SelectedPerson = Persons[0];
         }
         #region personChanged
         /// <summary>
@@ -126,8 +160,8 @@ namespace WpfAppEfPersson.ViewModel
         private void personReadyToSave(bool readyToSave)
         {
             _personChanged = readyToSave;
-            if (SavePersonsCommand != null)
-                SavePersonsCommand.RaiseCanExecuteChanged();
+            if (SavePersonCommand != null)
+                SavePersonCommand.RaiseCanExecuteChanged();
         }
         #endregion
 

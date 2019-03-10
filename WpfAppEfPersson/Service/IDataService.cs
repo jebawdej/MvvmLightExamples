@@ -11,6 +11,8 @@ namespace WpfAppEfPersson.Service
     {
         ObservableCollection<PersonDTO> GetAll();
         ObservableCollection<Persons> Get(Func<Persons, bool> predicate);
-        Persons GetByName(string name);
+        PersonDTO GetByName(string name);
+        bool SavePerson(PersonDTO personDto);
+        bool DeletePerson(Guid ID);
     }
 }
